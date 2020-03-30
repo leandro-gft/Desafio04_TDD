@@ -1,0 +1,8 @@
+package br.com.gft.projetoloja.model;
+
+public enum Tema {
+
+	ACAO, AUTOAJUDA, AVENTURA, CONTO, CRONICA, DIDATICO, DRAMA, FANTASIA, INFANTOJUVENIL, OUTROS, POESIA, ROMANCE,
+	TERROR;
+
+}
