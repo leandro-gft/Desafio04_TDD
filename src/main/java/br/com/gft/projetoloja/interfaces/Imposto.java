@@ -1,4 +1,4 @@
-package br.com.gft.projetoloja.model;
+package br.com.gft.projetoloja.interfaces;
 
 public interface Imposto {
 	

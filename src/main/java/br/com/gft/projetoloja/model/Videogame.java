@@ -1,15 +1,17 @@
 package br.com.gft.projetoloja.model;
 
+import br.com.gft.projetoloja.interfaces.Imposto;
+
 public class Videogame extends Produto implements Imposto {
 
 	private Marca marca;
 	private Modelo modelo;
 	private boolean isUsado;
 
-	public Videogame(double preco, boolean isUsado) {
-		super(preco);
-		this.isUsado = isUsado;
-	}
+//	public Videogame(double preco, boolean isUsado) {
+//		super(preco);
+//		this.isUsado = isUsado;
+//	}
 
 	public Marca getMarca() {
 		return marca;

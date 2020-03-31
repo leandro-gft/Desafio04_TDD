@@ -6,9 +6,6 @@ public abstract class Produto {
 	private double preco;
 	private int qtd;
 	
-	public Produto(double preco) {
-		this.preco = preco;
-	}
 	public String getNome() {
 		return nome;
 	}

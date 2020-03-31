@@ -1,17 +1,14 @@
-package projetoloja;
+package br.com.gft.projetoloja.testes;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import br.com.gft.projetoloja.builder.LivroBuilder;
 import br.com.gft.projetoloja.model.Livro;
 import br.com.gft.projetoloja.model.Tema;
 import br.com.gft.projetoloja.repository.Livros;
@@ -28,8 +25,8 @@ public class LivroTest {
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
-		livro1 = new Livro(100, Tema.DIDATICO);
-		livro2 = new Livro(100, Tema.OUTROS);
+		livro1 = new LivroBuilder().comPreco(100).comTema(Tema.DIDATICO).construir();
+		livro2 = new LivroBuilder().comPreco(100).comTema(Tema.OUTROS).construir();
 
 	}
 	

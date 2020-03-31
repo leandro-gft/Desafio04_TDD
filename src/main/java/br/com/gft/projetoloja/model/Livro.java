@@ -1,16 +1,12 @@
 package br.com.gft.projetoloja.model;
 
+import br.com.gft.projetoloja.interfaces.Imposto;
+
 public class Livro extends Produto implements Imposto {
 
 	private String autor;
 	private Tema tema;
 	private int qtdPag;
-
-	
-	public Livro(double preco, Tema tema) {
-		super(preco);
-		this.tema = tema;
-	}
 
 	public String getAutor() {
 		return autor;
