@@ -1,5 +1,7 @@
 package br.com.gft.projetoloja.testes;
 
+import static br.com.gft.projetoloja.model.Tema.DIDATICO;
+import static br.com.gft.projetoloja.model.Tema.FANTASIA;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 
@@ -15,8 +17,7 @@ import br.com.gft.projetoloja.repository.Livros;
 
 public class LivroTest {
 
-	private Livro livro1;
-	private Livro livro2;
+	private Livro l1, l2, l3;
 
 	@Mock
 	private Livros livros;
@@ -25,25 +26,28 @@ public class LivroTest {
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
-		livro1 = new LivroBuilder().comPreco(100).comTema(Tema.DIDATICO).construir();
-		livro2 = new LivroBuilder().comPreco(100).comTema(Tema.OUTROS).construir();
+		l1 = new LivroBuilder().comNome("Harry Potter").comPreco(40).comQtd(50).comTema(FANTASIA).construir();
+		l2 = new LivroBuilder().comNome("Senhor dos Aneis").comPreco(60).comQtd(30).comTema(FANTASIA).construir();
+		l3 = new LivroBuilder().comNome("Java POO").comPreco(20).comQtd(50).comTema(DIDATICO).construir();
 
 	}
 	
 	@Test
 	public void deveCalcularImpostoLivroDidatico() throws Exception {
-		assertEquals(0, livro1.calcularImposto(), 0.0001);
+		assertEquals(0, l3.calcularImposto(), 0.0001);
 	}
 	
 	@Test
 	public void deveCalcularImpostoLivros() throws Exception {
-		assertEquals(10, livro2.calcularImposto(), 0.0001);
+		assertEquals(6, l2.calcularImposto(), 0.0001);
+		assertEquals(4, l1.calcularImposto(), 0.0001);
+
 	}
 	
 	@Test
 	public void deveSalvarUmLivro() throws Exception {
-		livros.salvar(livro1);
-		verify(livros).salvar(livro1);		
+		livros.salvar(l1);
+		verify(livros).salvar(l1);		
 	}
 	
 	
