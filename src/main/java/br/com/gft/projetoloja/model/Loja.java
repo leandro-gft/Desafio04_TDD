@@ -32,6 +32,9 @@ public class Loja {
 	public void setGames(List<Videogame> games) {
 		this.games = games;
 	}
+	public void listaLivros() {
+	
+	}
 	
 	
 }
