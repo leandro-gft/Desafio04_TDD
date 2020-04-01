@@ -4,7 +4,7 @@ import static br.com.gft.projetoloja.model.Modelo.ONE;
 import static br.com.gft.projetoloja.model.Modelo.SLIM;
 import static br.com.gft.projetoloja.model.Tema.DIDATICO;
 import static br.com.gft.projetoloja.model.Tema.FANTASIA;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,27 +46,39 @@ public class LojaTest {
 	}
 
 	@Test
-	public void deveListarLivrosERetornarQuantidadeDeItens() throws Exception {
+	public void deveVerificarAtributosDeLivros() throws Exception {
 
 		livros.add(l1);
 		livros.add(l2);
 		livros.add(l3);
-		
-		assertEquals(3, americanas.listaLivros().size());
-
-				
+		assertEquals("Harry Potter", americanas.listaLivros().get(0).getNome());
+		assertEquals(FANTASIA, americanas.listaLivros().get(1).getTema());
+		assertEquals(20, americanas.listaLivros().get(2).getPreco(), 0.001);
+		assertEquals(3, americanas.listaLivros().size());				
 	}
 	
 	@Test
-	public void deveListarVideogamesERetornarQuantidadeDeItens() throws Exception {
+	public void deveVerificarAtributosDeVideogames() throws Exception {
 
 		games.add(v1);
 		games.add(v2);
 		games.add(v3);
-
+		
+		assertEquals("PS4", americanas.listaVideogames().get(0).getNome());
+		assertEquals(SLIM, americanas.listaVideogames().get(1).getModelo());
+		assertEquals(1500, americanas.listaVideogames().get(2).getPreco(), 0.001);
 		assertEquals(3, americanas.listaVideogames().size());
-
-
+	}
+	
+	@Test
+	public void deveCalcularOPatrimonio() throws Exception {
+		livros.add(l1);
+		livros.add(l2);
+		livros.add(l3);
+		games.add(v1);
+		games.add(v2);
+		games.add(v3);
+		assertEquals(941800.0, americanas.calculaPatrimonio(), 0.0001);
 	}
 
 		

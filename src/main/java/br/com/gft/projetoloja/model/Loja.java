@@ -42,20 +42,31 @@ public class Loja {
 	}
 
 	public List<Livro> listaLivros() {
-		for (Livro livro : livros) {
-			System.out.println("Nome: " + livro.getNome() + " - Preço: R$ " + livro.getPreco() + " - Qtd: "
-					+ livro.getQtd() + " em estoque.");
-		}
+//		for (Livro livro : livros) {
+//			System.out.println("Nome: " + livro.getNome() + " - Preço: R$ " + livro.getPreco() + " - Qtd: "
+//					+ livro.getQtd() + " em estoque.");
+//		}
 		return livros;
-		
+
 	}
 
 	public List<Videogame> listaVideogames() {
-			for (Videogame game : games) {
-				System.out.println("Nome: "+game.getNome()+" - Modelo: " + game.getModelo() + " - Preço: R$ " + game.getPreco() + " - Qtd: "
-						+ game.getQtd() + " em estoque.");
-		}
-			return games;
+//			for (Videogame game : games) {
+//				System.out.println("Nome: "+game.getNome()+" - Modelo: " + game.getModelo() + " - Preço: R$ " + game.getPreco() + " - Qtd: "
+//						+ game.getQtd() + " em estoque.");
+//		}
+		return games;
+
+	}
+
+	public double calculaPatrimonio() {
+		double total = 0;
+		for (Livro livro : livros)
+			total += livro.getPreco() * livro.getQtd();
+		for (Videogame game : games)
+			total += game.getPreco() * game.getQtd();
+
+		return total;
 
 	}
 
